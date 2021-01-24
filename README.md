@@ -22,6 +22,6 @@ O diretório src do HOST é o volume mapeado no diretório /var/www/html do CONT
 
 No browser http://localhost/info.php e veja o JIT e outras extensões habilitadas do PHP.
 
-Para acessar a ferramenta web para gerenciar o banco de dados, acesse http://localhost:8080 as credencias de acesso, encontra-se no arquivo docker-compose.yml
+Acessar a ferramenta web para gerenciar o banco de dados no SGBD MySQL, acesse http://localhost:8080 as credencias de acesso, encontra-se no arquivo docker-compose.yml
 
 Feito!
