@@ -2,11 +2,16 @@ version: "3"
 services:
   php-apache:
     container_name: php8-apache
-    build: ./php8-apache
+    build: 
+      args:
+        user: saitam
+        uid: 1000
+      context: ./php8-apache
     ports:
-      - "80:80"
+      - "8000:80"
     volumes:
-      - ./src:/var/www/html
+      #- ./src/laravel8auth:/var/www/html/laravel8auth
+      - ./src/crud-laravel:/var/www/html/crud-laravel
       - ./php8-apache/config/jit.ini:/usr/local/etc/php/conf.d/jit.ini
       - ./php8-apache/config/timezone.ini:/usr/local/etc/php/conf.d/timezone.ini
   db:

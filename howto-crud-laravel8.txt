@@ -1,0 +1,37 @@
+CRUD Laravel 8
+
+1) composer create-project --prefer-dist laravel/laravel blog
+
+2) Edite o arquivo .env
+DB_CONNECTION=mysql
+DB_HOST=db -->nome do container MySQL
+DB_PORT=3306
+DB_DATABASE=blog
+DB_USERNAME=root
+DB_PASSWORD=secret
+
+3) Criar o migration
+php artisan make:migration create_marcas_table --create=marcas
+
+php artisan migrate
+
+4) Adicionar a rota
+
+routes/web.php
+use App\Http\Controllers\MarcaController;
+  
+Route::resource('marcas', MarcaController::class);
+
+5) Adicionar o Controller e Model
+php artisan make:controller MarcaController --resource --model=Marca
+
+6) Criar os arquivos blade
+Criar o diretório marcas em resources/views e no diretório resources/views/marcas criar os arquivos blade
+layout.blade.php, index.blade.php, create.blade.php, edit.blade.php, show.blade.php
+
+Se estiver configurando o ambiente com Vhost, então acesse:
+http://app.intranet:8000/marcas
+
+Ou php artisan serve acesse:
+http://localhost:8000/marcas
+
