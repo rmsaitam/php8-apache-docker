@@ -11,7 +11,7 @@ services:
       - "8000:80"
     volumes:
       #- ./src/laravel8auth:/var/www/html/laravel8auth
-      - ./src/crud-laravel:/var/www/html/crud-laravel
+      - ./src:/var/www/html
       - ./php8-apache/config/jit.ini:/usr/local/etc/php/conf.d/jit.ini
       - ./php8-apache/config/timezone.ini:/usr/local/etc/php/conf.d/timezone.ini
   db:
